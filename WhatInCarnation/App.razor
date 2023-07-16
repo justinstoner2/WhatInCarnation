@@ -1,0 +1,36 @@
+﻿@*<Blazorise.ThemeProvider Theme="@Apptheme">*@
+    <Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+@*</Blazorise.ThemeProvider>*@
+@code{
+    //private Theme Apptheme = new Theme
+    //{
+    //    ColorOptions = new ThemeColorOptions
+    //    {
+    //        Primary = "#556270",
+    //        Secondary = "#FF6B6B",
+            
+
+    //    },
+    //    BackgroundOptions = new ThemeBackgroundOptions
+    //    {
+    //            Primary = "#556270",
+    //            Secondary = "#FF6B6B"
+    //    },
+    //    TextColorOptions = new ThemeTextColorOptions
+    //    {
+    //            Primary = "#556270",
+    //            Secondary = "#FF6B6B"
+    //    }
+    //};
+}

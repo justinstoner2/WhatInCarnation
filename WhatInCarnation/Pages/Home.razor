@@ -1,0 +1,32 @@
+﻿@page "/"
+@inject NavigationManager navManager
+
+<PageTitle>What In Car-Nation!!</PageTitle>
+
+
+<Card>
+    <CardBody>
+        <CardTitle Size="3" TextAlignment="TextAlignment.Center">
+            Welcome to What In Car-Nation!!
+        </CardTitle>
+        <CardText TextAlignment="TextAlignment.Center">
+            We are a dedicated group looking to help you choose your next car. We strive to pick the most appropriate car or truck for your needs. To get started click on the new recomendation link in the left menu.
+        </CardText>
+        
+    </CardBody>
+    <Div Class="center">
+        <Button Clicked="onSubmit" Color="Color.Primary">Get Started</Button>
+    </Div>
+    <Div Class="form-center">
+    <Figure Size="FigureSize.Is256x256">
+        <FigureImage Source="Photos\car.jpg" AlternateText="empty-256x256" Rounded />
+    </Figure>
+    </Div>
+</Card>
+
+@code{
+            void onSubmit()
+        {
+            navManager.NavigateTo("/recomendation");
+        }
+}

@@ -1,0 +1,93 @@
+﻿@page "/recomendation"
+@inject NavigationManager navManager
+
+<PageTitle>New Recomendation</PageTitle>
+
+<Card>
+    <CardBody>
+        <CardTitle Size="3" TextAlignment="TextAlignment.Center">Your Preferences</CardTitle>
+
+        <Field >
+        <FieldLabel>What type of car are you interested in?
+            <Select TValue="int" >
+                 <SelectItem Value="0">-Choose Car Type-</SelectItem>
+                <SelectItem Value="1">SUV</SelectItem>
+                <SelectItem Value="2">Coupe</SelectItem>
+                <SelectItem Value="3">Sports Car</SelectItem>
+                <SelectItem Value="4">Hatchback</SelectItem>
+                <SelectItem Value="5">Station Wagon</SelectItem>
+                <SelectItem Value="6">Crossover</SelectItem>
+                <SelectItem Value="7">Sedan</SelectItem>
+                <SelectItem Value="8">Minivan</SelectItem>
+                <SelectItem Value="9">Convertible</SelectItem>
+                <SelectItem Value="10">Pickup Truck</SelectItem>
+            </Select>
+        </FieldLabel>
+        </Field>
+        <Field>
+        <FieldLabel>
+            What fuel type are you interested in?
+            <Select TValue="int">
+                <SelectItem Value="1">Gas</SelectItem>
+                <SelectItem Value="2">Diesel</SelectItem>
+                <SelectItem Value="3">Electric</SelectItem>
+                <SelectItem Value="4">Hybrid</SelectItem>
+            </Select>
+        </FieldLabel>
+        </Field>
+        <Field>
+        <Label>
+            What is your price range?
+            <Select TValue="int">
+                <SelectItem Value="1">$0 - $15,000</SelectItem>
+                <SelectItem Value="2">$15,001 - $25,000</SelectItem>
+                <SelectItem Value="3">$25,001 - $35,000</SelectItem>
+                <SelectItem Value="4">$35,000 - $45,000</SelectItem>
+                <SelectItem Value="5">$45,001 - $55,000</SelectItem>
+                <SelectItem Value="6">More than $55,001</SelectItem>
+            </Select>
+        </Label>
+        </Field>
+        <Field>
+            <FieldLabel>
+                Rate your preference on fuel efficiency from 0 to 100
+            <Slider Min="0" Max="100" />
+            </FieldLabel>
+        </Field>
+        <Field>
+            <FieldLabel>
+                Rate your preference on a car with high performance from 0 to 100
+                <Slider Min="0" Max="100" />
+            </FieldLabel>
+        </Field>
+        <Field>
+            <FieldLabel>
+                Rate your preference on car reliability from 0 to 100
+                <Slider Min="0" Max="100"  />
+            </FieldLabel>
+        </Field>
+        <Field>
+            <FieldLabel>
+                Rate your preference on car comfort from 0 to 100
+                <Slider Min="0" Max="100" />
+            </FieldLabel>
+        </Field>
+        <Field>
+            <FieldLabel>
+                What is your name?
+                <TextEdit></TextEdit>
+            </FieldLabel>
+        </Field>
+        <Div Class="h-center">
+        <Button Clicked="onSubmit" Color="Color.Primary">Submit</Button>
+        </Div>
+    </CardBody>
+</Card>
+
+
+@code{
+            void onSubmit()
+        {
+            navManager.NavigateTo("/userRec");
+        }
+}
